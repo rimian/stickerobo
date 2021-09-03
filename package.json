@@ -1,9 +1,16 @@
 {
   "devDependencies": {
     "eslint": "^7.32.0",
-    "jest": "^27.1.0"
+    "jest": "^27.1.0",
+    "jest-puppeteer": "^5.0.4"
   },
   "scripts": {
     "test": "jest"
+  },
+  "jest": {
+    "preset": "jest-puppeteer"
+  },
+  "dependencies": {
+    "puppeteer": "^10.2.0"
   }
 }

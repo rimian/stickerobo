@@ -1,4 +1,4 @@
-const Foo = require('./sum');
+const Foo = require('./foo');
 const config = require('./config');
 
 describe('Foo', () => {

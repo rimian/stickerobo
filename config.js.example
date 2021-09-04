@@ -1,0 +1,6 @@
+
+module.exports = {
+  url: 'https://www.redbubble.com/auth/login',
+  username: '',
+  password: ''
+};

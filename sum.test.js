@@ -7,8 +7,7 @@ describe('Foo', () => {
   });
 
   it('should be', () => {
-    const foo = new Foo(config);
-    foo.login();
-
+    const foo =new Foo(config);
+    expect(foo.login()).toBeTruthy();
   });
 });

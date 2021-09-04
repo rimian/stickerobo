@@ -8,15 +8,22 @@ class Foo {
     (async () => {
       const browser = await puppeteer.launch();
       const page = await browser.newPage();
-      await page.goto(config.url);
-      await page.type('#ReduxFormInput1', config.username);
-      await page.type('#ReduxFormInput2', config.password);
-      await page.click('submit');
-      await browser.close();
+
+      try {
+        await page.goto(this.config.url);
+        await page.type('#ReduxFormInput1', this.config.username);
+        await page.type('#ReduxFormInput2', this.config.password);
+        await page.click('submit');
+        await browser.close();
+      } catch(e) {
+        await browser.close();
+      }
+
+
     })();
+
+    return true;
   }
-
-
 }
 
 module.exports = Foo;

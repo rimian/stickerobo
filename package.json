@@ -5,7 +5,7 @@
     "jest-puppeteer": "^5.0.4"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll --detectOpenHandles"
   },
   "jest": {
     "preset": "jest-puppeteer"

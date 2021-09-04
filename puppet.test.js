@@ -22,4 +22,3 @@ it('responds', () => {
     expect(json).toStrictEqual({"foo": "bar"})
   })();
 })
-})

@@ -14,6 +14,8 @@ class Foo {
       await page.type('#ReduxFormInput2', this.config.password);
       await page.click('button');
 
+      browser.close()
+
       return page;
     })();
   }

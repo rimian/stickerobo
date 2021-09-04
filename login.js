@@ -11,7 +11,6 @@ class Login {
       await this.page.type('#ReduxFormInput1', this.config.username);
       await this.page.type('#ReduxFormInput2', this.config.password);
       await this.page.click('button');
-      return this.page;
     })();
   }
 }

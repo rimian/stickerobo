@@ -15,16 +15,12 @@ describe('Login', () => {
     login = new Login(page, config);
   });
 
-  afterAll(() => {
-    browser.close();
+  afterAll(async () => {
+    await browser.close();
   });
 
   test('submits', async () => {
-    await page.goto(config.url);
-    await page.type('#ReduxFormInput1', config.username);
-    await page.type('#ReduxFormInput2', config.password);
-    await page.click('button');
-
+    await login.login()
     return expect(page.title()).resolves.toBe('All Departments | Redbubble')
   });
 });

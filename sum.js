@@ -1,4 +1,5 @@
-function sum(a, b) {
-  return a + b;
+class Foo {
+
 }
-module.exports = sum;
+
+module.exports = Foo;

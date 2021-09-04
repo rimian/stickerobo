@@ -1,5 +1,7 @@
 .vscode
 
+config.js
+
 # Logs
 logs
 *.log

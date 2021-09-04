@@ -1,11 +1,12 @@
-const sum = require('./sum');
+const Foo = require('./sum');
+const config = require('./config');
 
 describe('Google', () => {
   beforeAll(async () => {
-    await page.goto('https://google.com');
+    await page.goto(config.url);
   });
 
   it('should be titled "Google"', async () => {
-    await expect(page.title()).resolves.toMatch('Google');
+    await expect(page.title()).resolves.toMatch('Log In | Redbubble');
   });
 });

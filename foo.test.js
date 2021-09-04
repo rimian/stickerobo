@@ -2,12 +2,9 @@ const Foo = require('./foo');
 const config = require('./config');
 
 describe('Foo', () => {
-  beforeAll(() => {
+  const foo = new Foo(config);
 
-  });
-
-  it('should be', () => {
-    const foo =new Foo(config);
-    expect(foo.login()).toBeTruthy();
+  test('should be doing something', async () => {
+    return expect(foo.login()).resolves.toBeTruthy();
   });
 });

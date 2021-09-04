@@ -7,6 +7,8 @@ describe('Login', () => {
   let page;
   let login;
 
+  jest.setTimeout(10000)
+
   beforeAll(async () => {
     browser = await puppeteer.launch();
     page = await browser.newPage();
@@ -17,7 +19,12 @@ describe('Login', () => {
     browser.close();
   });
 
-  test('should be doing something', () => {
-    expect(true).toBe(true)
+  test('submits', async () => {
+    await page.goto(config.url);
+    await page.type('#ReduxFormInput1', config.username);
+    await page.type('#ReduxFormInput2', config.password);
+    await page.click('button');
+
+    return expect(page.title()).resolves.toBe('All Departments | Redbubble')
   });
 });

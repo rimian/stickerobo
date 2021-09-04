@@ -10,7 +10,7 @@ describe('testing api', () => {
     fetch.mockResponseOnce(JSON.stringify({ data: '12345' }))
 
     //assert on the response
-    const res = await APIRequest('google')
+    const res = await APIRequest('https://google.com')
     expect(res.data).toEqual('12345')
 
     //assert on the times called and arguments given to fetch

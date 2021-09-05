@@ -2,5 +2,9 @@
 module.exports = {
   url: 'https://www.redbubble.com/auth/login',
   username: '',
-  password: ''
+  password: '',
+  recaptcha: {
+    provider: { id: '2captcha', token: 'XXXXXXX' },
+    visualFeedback: true
+  }
 };

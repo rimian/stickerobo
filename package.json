@@ -11,6 +11,8 @@
     "preset": "jest-puppeteer"
   },
   "dependencies": {
-    "puppeteer": "^10.2.0"
+    "puppeteer": "^10.2.0",
+    "puppeteer-extra": "^3.1.18",
+    "puppeteer-extra-plugin-recaptcha": "^3.4.0"
   }
 }

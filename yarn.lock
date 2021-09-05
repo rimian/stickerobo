@@ -604,6 +604,13 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
+"@types/debug@^4.1.0":
+  version "4.1.7"
+  resolved "https://registry.yarnpkg.com/@types/debug/-/debug-4.1.7.tgz#7cc0ea761509124709b8b2d1090d8f6c17aadb82"
+  integrity sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==
+  dependencies:
+    "@types/ms" "*"
+
 "@types/graceful-fs@^4.1.2":
   version "4.1.5"
   resolved "https://registry.yarnpkg.com/@types/graceful-fs/-/graceful-fs-4.1.5.tgz#21ffba0d98da4350db64891f92a9e5db3cdb4e15"
@@ -630,6 +637,11 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
+"@types/ms@*":
+  version "0.7.31"
+  resolved "https://registry.yarnpkg.com/@types/ms/-/ms-0.7.31.tgz#31b7ca6407128a3d2bbc27fe2d21b345397f6197"
+  integrity sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
+
 "@types/node@*":
   version "16.7.6"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-16.7.6.tgz#8666478db8095aa66e25b7e469f3e7b53ea2855e"
@@ -639,6 +651,13 @@
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.3.2.tgz#fc8c2825e4ed2142473b4a81064e6e081463d1b3"
   integrity sha512-eI5Yrz3Qv4KPUa/nSIAi0h+qX0XyewOliug5F2QAtuRg6Kjg6jfmxe1GIwoIRhZspD1A0RP8ANrPwvEXXtRFog==
+
+"@types/puppeteer@5.4.3":
+  version "5.4.3"
+  resolved "https://registry.yarnpkg.com/@types/puppeteer/-/puppeteer-5.4.3.tgz#cdca84aa7751d77448d8a477dbfa0af1f11485f2"
+  integrity sha512-3nE8YgR9DIsgttLW+eJf6mnXxq8Ge+27m5SU3knWmrlfl6+KOG0Bf9f7Ua7K+C4BnaTMAh3/UpySqdAYvrsvjg==
+  dependencies:
+    "@types/node" "*"
 
 "@types/stack-utils@^2.0.0":
   version "2.0.1"
@@ -2517,7 +2536,7 @@ makeerror@1.0.x:
   dependencies:
     tmpl "1.0.x"
 
-merge-deep@^3.0.3:
+merge-deep@^3.0.1, merge-deep@^3.0.2, merge-deep@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/merge-deep/-/merge-deep-3.0.3.tgz#1a2b2ae926da8b2ae93a0ac15d90cd1922766003"
   integrity sha512-qtmzAS6t6grwEkNrunqTBdn0qKwFgNWvlxUbAV8es9M7Ot1EbyApytCnvE0jALPa46ZpKDUo527kKiaWplmlFA==
@@ -2818,6 +2837,34 @@ punycode@^2.1.0, punycode@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
+
+puppeteer-extra-plugin-recaptcha@^3.4.0:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin-recaptcha/-/puppeteer-extra-plugin-recaptcha-3.4.0.tgz#ae188dec3b033382be102ade7b844452d2759d19"
+  integrity sha512-JgQfIgkZNt5GKekQBzYLCxy0rUGYunscJ5paqI7tYY9xSNDI3AL5zKuKWaSENG2g54TNgCt85+wUl+fZZWHytw==
+  dependencies:
+    debug "^4.1.1"
+    merge-deep "^3.0.2"
+    puppeteer-extra-plugin "^3.1.9"
+
+puppeteer-extra-plugin@^3.1.9:
+  version "3.1.9"
+  resolved "https://registry.yarnpkg.com/puppeteer-extra-plugin/-/puppeteer-extra-plugin-3.1.9.tgz#0c8e3e17ee01e6311bbe32b696864ea3699bdedf"
+  integrity sha512-LYKj+3wGsnBzwEIpTertyOkzjcTHJn96FDSFXQ4Oo38CFFRw1qRBAJPPtAaMVjuVDqATeNd/RpP4n5jbxeX90g==
+  dependencies:
+    "@types/debug" "^4.1.0"
+    debug "^4.1.1"
+    merge-deep "^3.0.1"
+
+puppeteer-extra@^3.1.18:
+  version "3.1.18"
+  resolved "https://registry.yarnpkg.com/puppeteer-extra/-/puppeteer-extra-3.1.18.tgz#4269018e55f7ee62788d13e3eb3d89e842a3d48e"
+  integrity sha512-mGQyAnxaGcZomx7NVC4wgAkZl0MLTdE/GIfwRSbLJ9L4yIxPg9uEA3yiLBe+x09tjhTGEtv8KDef8Bl53RXgiA==
+  dependencies:
+    "@types/debug" "^4.1.0"
+    "@types/puppeteer" "5.4.3"
+    debug "^4.1.1"
+    deepmerge "^4.2.2"
 
 puppeteer@^10.2.0:
   version "10.2.0"

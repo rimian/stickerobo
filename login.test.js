@@ -7,12 +7,13 @@ describe('Login', () => {
   let page;
   let login;
 
-  jest.setTimeout(10000)
-
   beforeAll(async () => {
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({
+      headless: false
+    });
     page = await browser.newPage();
     login = new Login(page, config);
+    await page.setDefaultNavigationTimeout(0);
   });
 
   afterAll(async () => {
@@ -21,6 +22,6 @@ describe('Login', () => {
 
   test('submits', async () => {
     await login.login()
-    return expect(page.title()).resolves.toBe('All Departments | Redbubble')
+    return expect(page.url()).resolves.toBe('https://www.redbubble.com/explore/for-you')
   });
 });

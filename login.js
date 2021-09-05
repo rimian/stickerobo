@@ -6,11 +6,14 @@ class Login {
   }
 
   login() {
+    const page = this.page;
+
     return (async () => {
-      await this.page.goto(this.config.url);
-      await this.page.type('#ReduxFormInput1', this.config.username);
-      await this.page.type('#ReduxFormInput2', this.config.password);
-      await this.page.click('button');
+      await page.goto(this.config.url);
+      await page.type('#ReduxFormInput1', this.config.username);
+      await page.type('#ReduxFormInput2', this.config.password);
+      await page.click('button[type="submit"]');
+      await page.waitForNavigation();
     })();
   }
 }

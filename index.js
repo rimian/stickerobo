@@ -6,24 +6,22 @@ const StealthPlugin = require('puppeteer-extra-plugin-stealth')
 puppeteer.use(StealthPlugin())
 puppeteer.use(RecaptchaPlugin(config.recaptcha))
 
-puppeteer.launch({ headless: false }).then(async browser => {
-  page = await browser.newPage();
-
-  // await page.setDefaultNavigationTimeout(0);
-
+const login = async (page) => {
   await page.goto(config.url);
   await page.type('#ReduxFormInput1', config.username);
   await page.type('#ReduxFormInput2', config.password);
   await page.click('.login-form button[type="submit"]');
-
-  const { captchas, solutions, solved, error } = await page.solveRecaptchas()
-
-  console.log(captchas)
-  console.log(solutions)
-  console.log(solved)
-  console.log(error)
-
+  await page.solveRecaptchas()
   await page.waitForNavigation();
-  await page.screenshot({ path: 'result.png', fullPage: true })
-  await browser.close();
+}
+
+puppeteer.launch({ headless: false }).then(async browser => {
+  page = await browser.newPage();
+
+  await login(page).catch(e => {
+    console.log('Login error')
+  });
+
+  // await page.screenshot({ path: 'result.png', fullPage: true })
+  // await browser.close();
 })

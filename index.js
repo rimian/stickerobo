@@ -23,16 +23,20 @@ const upload = async (page) => {
 }
 
 const submit = async (page) => {
+  // #work_title_en
+  // #work_tag_field_en
   // #work_safe_for_work_true
 };
 
 puppeteer.launch({ headless: false }).then(async browser => {
   page = await browser.newPage();
 
-  await login(page)
-    .then(() => upload(page))
-    .then(() => submit(page))
-    .catch(e => console.log(e))
+  await page.setDefaultNavigationTimeout(0);
+
+  await login(page).catch(e => console.log(e))
+    // .then(() => upload(page))
+    // .then(() => submit(page))
+
 
   // await page.screenshot({ path: 'result.png', fullPage: true })
   // await browser.close();

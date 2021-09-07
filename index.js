@@ -23,11 +23,15 @@ const upload = async (page) => {
 }
 
 const submit = async (page) => {
+  await page.$$eval('.disable-all', links => links.forEach(link => link.click()))
   await page.$eval('#work_title_en', el => el.value = 'hello world');
   await page.$eval('#work_tag_field_en', el => el.value = 'hello world');
   await page.$eval('#work_description_en', el => el.value = 'hello world');
+  await page.click('#media_digital');
+  await page.click('[data-type="sticker"] .enable-all');
+  await page.click('#rightsDeclaration')
   await page.click('#work_safe_for_work_true');
-  await page.$$eval('.disable-all', links => links.forEach(link => link.click()))
+  // #submit-work
 };
 
 puppeteer.launch({ headless: false }).then(async browser => {

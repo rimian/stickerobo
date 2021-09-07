@@ -23,9 +23,11 @@ const upload = async (page) => {
 }
 
 const submit = async (page) => {
-  // #work_title_en
-  // #work_tag_field_en
-  // #work_safe_for_work_true
+  await page.$eval('#work_title_en', el => el.value = 'hello world');
+  await page.$eval('#work_tag_field_en', el => el.value = 'hello world');
+  await page.$eval('#work_description_en', el => el.value = 'hello world');
+  await page.click('#work_safe_for_work_true');
+  await page.$$eval('.disable-all', links => links.forEach(link => link.click()))
 };
 
 puppeteer.launch({ headless: false }).then(async browser => {
@@ -34,9 +36,9 @@ puppeteer.launch({ headless: false }).then(async browser => {
   await page.setDefaultNavigationTimeout(0);
 
   await login(page).catch(e => console.log(e))
-    // .then(() => upload(page))
-    // .then(() => submit(page))
-
+    .then(() => upload(page))
+    .then(() => submit(page))
+    .catch(err => console.log(err))
 
   // await page.screenshot({ path: 'result.png', fullPage: true })
   // await browser.close();
